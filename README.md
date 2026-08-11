@@ -28,9 +28,15 @@ pnpm install
 
 - Astro (static output)
 - Tailwind CSS v4 via `@tailwindcss/vite`
-- TypeScript 6.x (required by `astro check` until TypeScript 7 exposes a programmatic API)
+- TypeScript 6.x (see note below)
 - Biome (format / lint) — no ESLint or Prettier
 - Build-time theme selection (see [src/themes/README.md](src/themes/README.md))
+
+### TypeScript 6 pin
+
+This project pins `typescript` to **6.x** on purpose. `astro check` (via `@astrojs/check` / the Astro language server) still needs TypeScript’s classic programmatic API. TypeScript **7** is the native compiler and does not expose that API yet, so `pnpm check` fails on TS 7.
+
+Do not bump to TypeScript 7 until Astro documents support (tracked upstream: [withastro/roadmap#1321](https://github.com/withastro/roadmap/discussions/1321)).
 
 ## Themes
 
