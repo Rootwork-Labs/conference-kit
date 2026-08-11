@@ -1,0 +1,24 @@
+/**
+ * Minimal Redshifted stub — proves theme selection and the token vocabulary.
+ * Visual design lands in a later issue.
+ *
+ * Themes override the Tailwind semantic custom properties under [data-theme].
+ */
+[data-theme="redshifted"] {
+	--color-background: #1a1210;
+	--color-surface: #261c18;
+	--color-surface-raised: #342821;
+	--color-foreground: #f5ebe4;
+	--color-foreground-muted: #c4b0a4;
+	--color-accent: #e85d04;
+	--color-accent-foreground: #1a1210;
+	--color-border: #4a382e;
+	--color-focus: #ffba08;
+
+	--font-sans: "Segoe UI", system-ui, sans-serif;
+	--font-display: "Segoe UI", system-ui, sans-serif;
+
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+}

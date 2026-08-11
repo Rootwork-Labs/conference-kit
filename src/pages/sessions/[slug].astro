@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+	return [{ params: { slug: "example" } }];
+}
+
+const { slug } = Astro.params;
+---
+
+<BaseLayout
+	title={`Session: ${slug}`}
+	description="Session detail placeholder."
+>
+	<h1 class="font-display text-3xl font-semibold tracking-tight">
+		Session: {slug}
+	</h1>
+	<p class="text-foreground-muted mt-3 max-w-prose">
+		Placeholder session detail page for <code class="text-foreground">{slug}</code>.
+	</p>
+</BaseLayout>

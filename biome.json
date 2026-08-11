@@ -13,10 +13,12 @@
 			"!**/dist",
 			"!**/build",
 			"!**/coverage",
+			"!**/.astro",
 			"!**/.vscode",
 			"!**/.cursor",
 			"!**/.husky",
-			"!**/.github"
+			"!**/.github",
+			"!**/_github"
 		]
 	},
 	"formatter": {
@@ -41,5 +43,27 @@
 		"formatter": {
 			"quoteStyle": "double"
 		}
-	}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.astro"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					},
+					"correctness": {
+						"noUnusedVariables": "off",
+						"noUnusedImports": "off"
+					}
+				}
+			}
+		}
+	]
 }

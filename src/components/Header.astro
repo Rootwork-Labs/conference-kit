@@ -1,0 +1,25 @@
+---
+import { site } from "../config/site.ts";
+import Nav, { type NavItem } from "./Nav.astro";
+
+const items: NavItem[] = [
+	{ href: "/", label: "Home" },
+	{ href: "/speakers", label: "Speakers" },
+	{ href: "/schedule", label: "Schedule" },
+	{ href: "/sponsors", label: "Sponsors" },
+	{ href: "/venue", label: "Venue" },
+	{ href: "/code-of-conduct", label: "Code of Conduct" },
+	{ href: "https://example.com/register", label: "Register", external: true },
+];
+---
+
+<header class="border-border bg-surface border-b">
+	<div
+		class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4"
+	>
+		<a href="/" class="font-display text-lg font-semibold text-foreground">
+			{site.name}
+		</a>
+		<Nav items={items} />
+	</div>
+</header>

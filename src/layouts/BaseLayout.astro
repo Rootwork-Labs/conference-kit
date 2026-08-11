@@ -1,0 +1,39 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import SkipLink from "../components/SkipLink.astro";
+import { site } from "../config/site.ts";
+import "../styles/global.css";
+import { getTheme } from "../themes/registry.ts";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const theme = getTheme(site.themeId);
+const {
+	title = site.name,
+	description = "Conference website powered by Conference Kit.",
+} = Astro.props;
+const pageTitle = title === site.name ? title : `${title} · ${site.name}`;
+---
+
+<!doctype html>
+<html lang="en" data-theme={theme.id}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body class="flex min-h-dvh flex-col">
+		<SkipLink />
+		<Header />
+		<main id="main" class="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
