@@ -1,0 +1,30 @@
+---
+description: Dependency and tooling upkeep for this starter template
+alwaysApply: true
+---
+
+# Dependency hygiene
+
+Keep the dependency surface tiny. Every `devDependency` must earn its place.
+
+## Updating dependencies
+
+1. Prefer Dependabot PRs (or an equivalent bot) for routine bumps of npm deps and GitHub Actions. Groups in `.github/dependabot.yml` batch version updates into ~one PR per ecosystem per week.
+2. After any bump, run `pnpm install` then `pnpm check` and fix breakages before merge.
+3. Pin exact versions in `package.json` for this template so clones stay reproducible; let the lockfile and bot PRs drive updates.
+4. Respect pnpm’s `minimumReleaseAge` (default 24h). If a brand-new release is blocked, wait or pin the previous stable — do not disable the gate casually.
+5. Keep `packageManager` in sync when upgrading pnpm (`corepack use pnpm@<version>`).
+6. After Biome upgrades, run `pnpm exec biome migrate --write` if the CLI suggests it, then `pnpm check`.
+
+## Commits for upkeep
+
+- Dependency-only bumps: `chore(deps): …`
+- Tooling/config that is not a user-facing feature: `chore: …`
+- Fixes to the template itself: `fix: …`
+
+## Do not
+
+- Add tools “just in case”
+- Expand semantic-release to publish npm unless a derived project explicitly needs it
+- Replace Biome with ESLint/Prettier
+- Run full-repo checks in a pre-commit hook; keep hooks limited to commit-msg validation

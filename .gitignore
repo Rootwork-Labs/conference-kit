@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Builds and caches
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+.cache/
+.turbo/
+.parcel-cache/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
+
+# Local tooling
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

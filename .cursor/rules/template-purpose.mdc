@@ -1,0 +1,38 @@
+---
+description: Purpose and boundaries of this Rootwork TypeScript starter template
+alwaysApply: true
+---
+
+# Rootwork TypeScript starter
+
+This repository is a **framework-agnostic TypeScript repository template**, not an application starter.
+
+## What belongs here
+
+Only boring setup we would want in nearly every new TypeScript repo:
+
+- pnpm + lockfile pinning
+- strict TypeScript (typecheck only)
+- Biome for format / lint / imports
+- Conventional Commits, commitlint, Husky `commit-msg`
+- semantic-release for GitHub Releases (not npm by default)
+- minimal CI
+
+## What does not belong here
+
+Do **not** add unless a concrete downstream project needs it (and usually not in this template at all):
+
+- App frameworks (React, Next, Astro, etc.)
+- Test runners, bundlers, Docker, databases
+- ESLint, Prettier, lint-staged, Commitizen, Changesets
+- Application dependencies or feature code beyond a trivial `src/` placeholder
+
+## Decision test
+
+Before adding anything, ask: “Would we want this in almost every new TypeScript repository?”
+
+If no, leave it out. Prefer small, explicit config over clever abstraction.
+
+## Creating new repos from this template
+
+Agent-driven creation uses the personal Cursor command `/new-ts-repo` (not defined in this repo). Keep this template focused on repository-level conventions only.
